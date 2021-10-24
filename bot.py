@@ -16,12 +16,13 @@ dispatcher = Dispatcher(bot)
 @dispatcher.message_handler(commands=['start'])
 async def start(message: types.Message):
     await message.answer(f'Hello {message.from_user.username}! I\'m PodcasterBot!')
+    await message.answer('/audio video url')
 
 
-@dispatcher.message_handler(content_types=['text'])
+@dispatcher.message_handler(commands=['audio'])
 async def send_audio(message: types.Message):
     try:
-        pafy_obj = pafy.new(message.text)
+        pafy_obj = pafy.new(message.get_args())
         await message.answer('Please waiting...')
 
         title = pafy_obj.title
