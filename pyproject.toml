@@ -10,6 +10,7 @@ aiogram = "^2.15"
 pafy = "^0.5.5"
 youtube_dl = "^2021.6.6"
 pydub = "^0.25.1"
+python-dotenv = "^0.19.1"
 
 [tool.poetry.dev-dependencies]
 
